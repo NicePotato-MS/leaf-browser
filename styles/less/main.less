@@ -1,3 +1,13 @@
+@bg-color-dark: #121212; // Dark background
+@bg-color-light-dark: #1e1e1e; // Slightly lighter background
+@text-color-light: #e0e0e0; // Light text
+@text-color-lighter: #bbbbbb; // Lighter text for subtle elements
+@accent-color: #1a73e8; // Accent color for highlights or active elements
+@border-color: #333; // Dark border color
+@hover-bg-color: #333333; // Background for hover states
+@scrollbar-bg-color: #2b2b2b; // Dark scrollbar background
+@scrollbar-thumb-color: #666666; // Scrollbar thumb color
+
 @import "glyphicons.less";
 
 * {
@@ -7,7 +17,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: @bg-color-dark;
 }
 
 @keyframes spin {
@@ -38,9 +48,9 @@ body {
 
       .header {
         display: flex;
-        background-color: #ccc;
+        background-color: @bg-color-light-dark;
         flex-wrap: nowrap;
-        border-bottom: 1px solid #bbb;
+        border-bottom: 1px solid @border-color;
         height: 51px;
 
         .button {
@@ -50,17 +60,17 @@ body {
           text-align: center;
           font-size: 15px;
           cursor: pointer;
-          border-right: 1px solid #bbb;
+          border-right: 1px solid @border-color;
 
           &:hover {
-            background-color: #bbb;
+            background-color: @border-color;
           }
         }
 
         .button-collapse {
           z-index: 100;
-          background-color: #ccc;
-          border-bottom: 1px solid #bbb;
+          background-color: @bg-color-light-dark;
+          border-bottom: 1px solid @border-color;
           margin-bottom: -1px;
           height: 51px;
 
@@ -87,7 +97,7 @@ body {
           height: 50px;
           display: flex;
           justify-content: center;
-          border-right: 1px solid #bbb;
+          border-right: 1px solid @border-color;
           cursor: pointer;
 
           &:hover {
@@ -99,7 +109,7 @@ body {
             font-size: 20px;
             white-space: nowrap;
             overflow: hidden;
-            color: #444;
+            color: @text-color-light;
             margin-left: 15px;
           }
         }
@@ -126,15 +136,15 @@ body {
             line-height: 80px;
             text-align: center;
             font-size: 15px;
-            background-color: #ddd;
-            border: 1px solid #bbb;
-            color: #666;
+            background-color: @bg-color-light-dark;
+            border: 1px solid @border-color;
+            color: @text-color-lighter;
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
             box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.2);
 
             &:hover {
-              background-color: #ccc;
+              background-color: @hover-bg-color;
             }
           }
         }
@@ -144,7 +154,7 @@ body {
           width: 300px;
           height: 100%;
           overflow-y: scroll;
-          border: 1px solid #bbb;
+          border: 1px solid @border-color;
           border-left: none;
           z-index: 100;
           background-color: #eee;
@@ -153,13 +163,13 @@ body {
 
           &::-webkit-scrollbar {
             width: 15px;
-            background-color: #ddd;
+            background-color: @bg-color-light-dark;
           }
 
           &::-webkit-scrollbar-thumb {
             border-radius: 8px;
             background: rgba(0, 0, 0, 0.6);
-            border: 3px solid #ddd;
+            border: 3px solid @bg-color-light-dark;
 
             &::before {
               content: "";
@@ -173,15 +183,15 @@ body {
           .scroll-content {
 
             .app-left-button() {
-                background-color: #ddd;
-                border: 1px solid #ccc;
+                background-color: @bg-color-light-dark;
+                border: 1px solid @hover-bg-color;
                 padding: 5px 8px;
                 font-size: 12px;
                 line-height: 18px;
                 cursor: pointer;
 
                 &:hover {
-                  background-color: #d7d7d7;
+                  background-color: @hover-bg-color;
                 }
             }
 
@@ -229,7 +239,7 @@ body {
                     transition: opacity 0.3s;
 
                     span {
-                      color: #666;
+                      color: @text-color-lighter;
                       transform: rotate(0);
                       display: inline-block;
                       transition: transform 0.4s;
@@ -247,7 +257,7 @@ body {
                       height: 10px;
                       border-radius: 3px;
                       border: 1px solid rgba(0, 0, 0, 0.3);
-                      background-color: #999;
+                      background-color: @text-color-lighter;
 
                       &.small {
                         min-width: 6px;
@@ -266,7 +276,7 @@ body {
 
                     .icon {
                       display: none;
-                      color: #999;
+                      color: @text-color-lighter;
                       margin-left: 5px;
 
                       &.close {
@@ -274,7 +284,7 @@ body {
                         cursor: pointer;
 
                         &:hover {
-                          color: #444;
+                          color: @text-color-light;
                         }
                       }
                     }
@@ -351,7 +361,7 @@ body {
     > .app-right {
       height: 100%;
       flex-grow: 1;
-      background-color: #f3f3f3;
+      background-color: @bg-color-dark;
       position: relative;
 
       #welcome {
@@ -380,7 +390,7 @@ body {
             height: 0;
             text-align: center;
             font-size: 30px;
-            color: #666;
+            color: @text-color-lighter;
             opacity: 0;
             transition: opacity 0.5s;
 
@@ -394,7 +404,7 @@ body {
 
             code {
               display: inline-block;
-              border: 1px solid #999;
+              border: 1px solid @text-color-lighter;
               border-radius: 6px;
               padding: 5px;
             }
@@ -413,21 +423,21 @@ body {
 
         .button-mixin() {
           height: 30px;
-          background-color: #ddd;
-          border: 1px solid #ccc;
+          background-color: @bg-color-light-dark;
+          border: 1px solid @hover-bg-color;
           padding: 5px 8px;
           font-size: 12px;
           line-height: 18px;
           cursor: pointer;
 
           &:hover {
-            background-color: #d3d3d3;
+            background-color: @bg-color-light-dark;
           }
 
           &.disabled {
             cursor: default;
-            background-color: #ddd;
-            color: #999;
+            background-color: @bg-color-light-dark;
+            color: @text-color-lighter;
           }
         }
 
@@ -476,12 +486,12 @@ body {
 
           input {
             flex-grow: 1;
-            border: 1px solid #ccc;
+            border: 1px solid @hover-bg-color;
             outline: none;
             padding: 0 5px;
 
             &:focus {
-              background-color: #f7f7f7;
+              background-color: @bg-color-dark;
 
             }
           }
@@ -501,8 +511,8 @@ body {
           display: flex;
           flex-direction: row;
           padding: 5px;
-          background-color: #e5e5e5;
-          border-bottom: 1px solid #ccc;
+          background-color: @bg-color-light-dark;
+          border-bottom: 1px solid @hover-bg-color;
           min-height: 51px;
         }
 
@@ -551,8 +561,8 @@ body {
             top: -1px;
             right: 25%;
             left: 25%;
-            background-color: #e5e5e5;
-            border: 1px solid #ccc;
+            background-color: @bg-color-light-dark;
+            border: 1px solid @hover-bg-color;
             border-top: none;
             z-index: 100;
             padding: 10px;
